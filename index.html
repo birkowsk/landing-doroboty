@@ -7,12 +7,27 @@
   <meta name="description" content="Portal pracy dla osób pracujących z AI. Opublikuj ogłoszenie na 30 dni i przeglądaj aplikacje z Match Score.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1E4A'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FFD23F'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preload" href="assets/hero-source.png" as="image">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#140A2E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23140A2E'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23FF3EA5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="preload" href="assets/hero-source.png?v=robot2" as="image">
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="palm" viewBox="0 0 200 300">
+      <path d="M92 300C96 220 104 150 112 92l10 2c-6 56-14 128-16 206z"/>
+      <path d="M117 90C80 70 40 80 10 120c35-25 70-28 107-24z"/>
+      <path d="M117 90C85 50 50 40 20 50c35 5 65 20 97 44z"/>
+      <path d="M117 90c-7-40 3-65 23-85-8 30-14 55-20 87z"/>
+      <path d="M117 90c33-35 68-35 83-15-30-5-55 5-81 20z"/>
+      <path d="M117 90c38-5 68 20 78 55-25-30-50-43-77-49z"/>
+      <path d="M117 92c-22 8-47 38-57 78 20-35 40-58 58-72z"/>
+    </symbol>
+    <symbol id="skyline" viewBox="0 0 600 120" preserveAspectRatio="none">
+      <path d="M0 120V84h28V60h22v24h18V40h30v80h4V70h26V30h8V18h6v12h8v90h6V64h34v56h6V50h20V22h24v98h8V74h30v46h4V36h14V8h4v28h14v84h6V58h32v62h6V44h26v76h4V80h22V52h26v68h6V28h30v92h6V66h24v54h8V46h28v74z"/>
+    </symbol>
+  </svg>
   <a class="skip" href="#main">Przejdź do treści</a>
 
   <header class="site-header">
@@ -41,13 +56,19 @@
             <button class="btn btn-primary" type="button" data-placeholder>Dodaj ogłoszenie</button>
             <a class="link-arrow" href="#match-score">Zobacz, jak liczymy Match Score</a>
           </div>
-          <p class="hero-stat" data-anim="hero-stat"><strong>12 000</strong> aktywnych kandydatów w maju 2026 <span>· dane z dashboardu DoRoboty.ai</span></p>
+          <p class="hero-stat" data-anim="hero-stat"><strong>12&nbsp;000</strong> aktywnych kandydatów w maju 2026 <span>· dane z dashboardu DoRoboty.ai</span></p>
         </div>
 
         <figure class="hero-figure" data-anim="hero-figure">
-          <div class="raster" data-raster data-src="assets/hero-source.png">
-            <img class="raster-fallback" src="assets/hero-raster.svg" width="215" height="246"
-                 alt="Marmurowa głowa cesarza Augusta ułożona z granatowych kropek – każda kropka to jeden kandydat.">
+          <div class="sky" aria-hidden="true" data-anim="hero-sky">
+            <div class="sun"></div>
+            <svg class="skyline"><use href="#skyline"/></svg>
+            <svg class="palm palm-l"><use href="#palm"/></svg>
+            <svg class="palm palm-r"><use href="#palm"/></svg>
+          </div>
+          <div class="raster" data-raster data-src="assets/hero-source.png?v=robot2">
+            <img class="raster-fallback" src="assets/hero-raster.svg?v=robot2" width="224" height="300"
+                 alt="Robot w stylu retro ułożony z turkusowych i różowych kropek na tle zachodu słońca – każda kropka to jeden kandydat.">
             <canvas aria-hidden="true"></canvas>
           </div>
           <article class="app-card" data-anim="hero-card" aria-label="Przykładowa aplikacja z Match Score">
@@ -55,7 +76,7 @@
             <div class="app-card-head">
               <div>
                 <h2 class="app-role">Specjalista/ka automatyzacji</h2>
-                <p class="app-meta">Kategoria Apply · aplikacja nr 2741</p>
+                <p class="app-meta">Kategoria Apply</p>
               </div>
               <p class="score" aria-label="Match Score 82 na 100"><span>82</span><small>/100</small></p>
             </div>
@@ -93,17 +114,17 @@
         <h2 id="how-title" class="display section-title" data-anim="section-title">Jak to działa</h2>
         <ol class="steps">
           <li data-anim="card">
-            <span class="numeral" aria-hidden="true">I</span>
+            <span class="numeral" aria-hidden="true">01</span>
             <h3>Opisz pracę z asystentem</h3>
             <p>Asystent AI proponuje treść ogłoszenia. Zmieniasz ją, jak chcesz, zanim cokolwiek opublikujesz.</p>
           </li>
           <li data-anim="card">
-            <span class="numeral" aria-hidden="true">II</span>
+            <span class="numeral" aria-hidden="true">02</span>
             <h3>Wybierz kategorię i opublikuj</h3>
             <p>Build, Apply albo Lead. Ogłoszenie jest widoczne przez 30 dni.</p>
           </li>
           <li data-anim="card">
-            <span class="numeral" aria-hidden="true">III</span>
+            <span class="numeral" aria-hidden="true">03</span>
             <h3>Zacznij od najlepiej dopasowanych</h3>
             <p>Każda aplikacja ma Match Score. Po pierwszej rozmowie zapisujesz wynik: kontynuujemy albo odrzucamy.</p>
           </li>
@@ -140,8 +161,8 @@
         <div class="who-head">
           <h2 id="who-title" class="display section-title" data-anim="section-title">Kogo tu znajdziesz</h2>
           <dl class="stats" data-anim="card">
-            <div><dt>aktywnych kandydatów</dt><dd>12 000</dd><dd class="stat-ctx">maj 2026 · w listopadzie 2025: 6 000</dd></div>
-            <div><dt>aplikacji</dt><dd>18 000</dd><dd class="stat-ctx">maj 2026 · w listopadzie 2025: 9 000</dd></div>
+            <div><dt>aktywnych kandydatów</dt><dd>12&nbsp;000</dd><dd class="stat-ctx">maj 2026 · w listopadzie 2025: 6&nbsp;000</dd></div>
+            <div><dt>aplikacji</dt><dd>18&nbsp;000</dd><dd class="stat-ctx">maj 2026 · w listopadzie 2025: 9&nbsp;000</dd></div>
           </dl>
         </div>
         <p class="stats-def">Aktywny kandydat to osoba z zarejestrowaną aktywnością w danym miesiącu. Dane z dashboardu DoRoboty.ai.</p>
@@ -270,6 +291,12 @@
 
     <!-- 8. FINAŁ -->
     <section class="final" aria-labelledby="final-title">
+      <div class="final-sky" aria-hidden="true">
+        <div class="sun"></div>
+        <svg class="skyline"><use href="#skyline"/></svg>
+        <svg class="palm palm-l"><use href="#palm"/></svg>
+        <svg class="palm palm-r"><use href="#palm"/></svg>
+      </div>
       <div class="wrap final-inner">
         <h2 id="final-title" class="display final-title" data-anim="section-title">Opisz pracę z&nbsp;AI konkretnie. Kandydaci już tu&nbsp;są.</h2>
         <button class="btn btn-primary btn-lg" type="button" data-placeholder data-anim="final-cta">Dodaj ogłoszenie</button>
@@ -279,13 +306,11 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p><strong>DoRoboty.ai</strong> – portal pracy dla osób pracujących z AI. Prototyp strony.</p>
-      <p>Grafika: <a href="https://www.metmuseum.org/art/collection/search/247993">Marble portrait of the emperor Augustus</a>, The Metropolitan Museum of Art, domena publiczna (CC0), przetworzona na raster.</p>
-    </div>
+      <p><strong>DoRoboty.ai</strong> – portal pracy dla osób pracujących z AI. Prototyp strony.</p>    </div>
   </footer>
 
   <div class="toast" role="status" aria-live="polite" data-toast></div>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=3" defer></script>
 </body>
 </html>

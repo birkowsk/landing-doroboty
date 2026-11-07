@@ -1,6 +1,7 @@
 /* DoRoboty.ai – landing dla firm. Bez zależności. */
 (() => {
-  const NAVY = "#0F1E4A";
+  const CYAN = "#2DE2E6";
+  const PINK = "#FF3EA5";
   const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
 
   /* ---------- komunikat dla niepodłączonych przycisków ---------- */
@@ -11,13 +12,14 @@
       toast.textContent = "Jeszcze niepodłączone – to prototyp strony";
       toast.classList.add("is-visible");
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 3200);
+      toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 5000);
     });
   });
 
   /* ---------- raster herosa (Canvas2D z obrazu źródłowego) ----------
-     Kropka = jeden kandydat. Im ciemniejszy fragment rzeźby, tym większa kropka.
-     Tło obrazu źródłowego jest białe, więc nie daje kropek. */
+     Kropka = jeden kandydat. Na nocnym tle: im jaśniejszy fragment robota, tym większa kropka;
+     czerwone elementy zabawki świecą na różowo.
+     Tło obrazu źródłowego jest czarne, więc nie daje kropek. */
   const raster = document.querySelector("[data-raster]");
   if (raster) {
     const canvas = raster.querySelector("canvas");
@@ -37,10 +39,12 @@
     };
     img.src = raster.dataset.src;
 
+    // R = jasność kropki, G = czerwony element robota (kropka różowa)
     function sample(u, v) {
       const x = Math.min(pixels.width - 1, Math.max(0, Math.round(u * pixels.width)));
       const y = Math.min(pixels.height - 1, Math.max(0, Math.round(v * pixels.height)));
-      return pixels.data[(y * pixels.width + x) * 4] / 255;
+      const i = (y * pixels.width + x) * 4;
+      return [pixels.data[i] / 255, pixels.data[i + 1] > 128];
     }
 
     function drawRaster() {
@@ -51,23 +55,31 @@
       canvas.height = Math.round(rect.height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, rect.width, rect.height);
-      ctx.fillStyle = NAVY;
+      const grad = ctx.createLinearGradient(0, 0, 0, rect.height);
+      grad.addColorStop(0, "#F2FEFF");
+      grad.addColorStop(1, CYAN);
+      const cyanPath = new Path2D();
+      const pinkPath = new Path2D();
 
       const step = isMobile() ? 8 : Math.max(5.5, rect.width / 76);
       const half = step / 2;
-      ctx.beginPath();
       for (let y = half; y < rect.height; y += step) {
         for (let x = half; x < rect.width; x += step) {
-          const v = sample(x / rect.width, y / rect.height);
-          if (v > 0.985) continue; // tło
-          // gamma przyciemnia półcienie marmuru, żeby rysy twarzy były czytelne
-          const d = Math.pow(1 - v, 0.85);
-          const r = (0.22 + 0.78 * d) * half * 0.98;
-          ctx.moveTo(x + r, y);
-          ctx.arc(x, y, r, 0, Math.PI * 2);
+          const [v, isPink] = sample(x / rect.width, y / rect.height);
+          if (v < 0.03) continue; // tło
+          const r = (0.15 + 0.85 * Math.pow(v, 0.9)) * half;
+          const path = isPink ? pinkPath : cyanPath;
+          path.moveTo(x + r, y);
+          path.arc(x, y, r, 0, Math.PI * 2);
         }
       }
-      ctx.fill();
+      ctx.fillStyle = grad;
+      ctx.fill(cyanPath);
+      ctx.fillStyle = PINK;
+      ctx.shadowColor = "rgba(255, 62, 165, 0.8)";
+      ctx.shadowBlur = 6;
+      ctx.fill(pinkPath);
+      ctx.shadowBlur = 0;
     }
 
     let t;
@@ -101,7 +113,7 @@
       const step = isMobile() ? 18 : 14;
       const halo = isMobile() ? 18 : 28;
 
-      fctx.fillStyle = NAVY;
+      fctx.fillStyle = CYAN;
       fctx.beginPath();
       for (let y = step / 2; y < host.height; y += step) {
         for (let x = step / 2; x < host.width; x += step) {
@@ -122,7 +134,7 @@
           fctx.arc(x, y, r, 0, Math.PI * 2);
         }
       }
-      fctx.globalAlpha = 0.55;
+      fctx.globalAlpha = 0.5;
       fctx.fill();
       fctx.globalAlpha = 1;
     }
