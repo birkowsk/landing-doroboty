@@ -303,6 +303,51 @@ a { color: inherit; }
 @media (min-width: 640px) { .offer-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1040px) { .offer-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
 
+/* karuzela ofert – port Coverflow Carousel (21st.dev); bez JS działa siatka powyżej */
+.cf { --cf-card: clamp(270px, 26vw, 340px); margin-top: 32px; }
+@media (max-width: 767px) { .cf { --cf-card: min(76vw, 320px); } }
+.cf-rel { position: relative; }
+.cf-frame {
+  overflow: hidden; padding: 40px 0; cursor: grab; outline: none; border-radius: 20px;
+  -webkit-user-select: none; user-select: none;
+}
+.cf-frame:active { cursor: grabbing; }
+.cf-frame:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+.offer-grid.cf-stage { display: block; position: relative; margin: 0; transform-style: preserve-3d; pointer-events: none; }
+.cf-stage .cf-card { pointer-events: auto; } /* karty cofnięte w głąb są „za” płaszczyzną sceny */
+.cf-card {
+  position: absolute; left: 50%; top: 0; width: var(--cf-card); will-change: transform, opacity;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, .5);
+}
+.cf-card.is-active { border-color: rgba(255, 62, 165, .7); box-shadow: 0 0 44px rgba(255, 62, 165, .3), 0 24px 50px rgba(0, 0, 0, .5); }
+.cf-nav {
+  position: absolute; top: 50%; z-index: 200; transform: translateY(-50%);
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  color: var(--text); background: rgba(20, 10, 46, .78); border: 1px solid var(--glass-line); backdrop-filter: blur(8px);
+  transition: background .15s ease, border-color .15s ease;
+}
+.cf-nav:hover { background: rgba(46, 20, 96, .95); border-color: var(--cyan); }
+.cf-prev { left: 4px; }
+.cf-next { right: 4px; }
+@media (min-width: 768px) { .cf-prev { left: 12px; } .cf-next { right: 12px; } }
+/* telefon: strzałki pod kartą, po bokach kropek – nie zasłaniają treści oferty */
+@media (max-width: 767px) {
+  .cf-nav { top: auto; bottom: -52px; transform: none; }
+  .cf-prev { left: 0; }
+  .cf-next { right: 0; }
+  .cf-pager { min-height: 44px; align-items: center; margin-top: 8px; }
+}
+.cf-pager { display: flex; justify-content: center; gap: 4px; margin-top: 4px; }
+.cf-pager button {
+  width: 28px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center;
+}
+.cf-pager button::before {
+  content: ""; width: 8px; height: 8px; border-radius: 99px; background: var(--text); opacity: .3;
+  transition: width .2s ease, opacity .2s ease, background .2s ease;
+}
+.cf-pager button[aria-current="true"]::before { width: 22px; opacity: 1; background: var(--cyan); box-shadow: 0 0 10px rgba(45, 226, 230, .6); }
+.cf-hint { text-align: center; margin-top: 6px; }
+
 /* ---------- 6. co dostajesz ---------- */
 .get { background: var(--night-2); padding: var(--sec) 0; border-top: 1px solid var(--glass-line); }
 .get-grid { display: grid; gap: 40px; }
