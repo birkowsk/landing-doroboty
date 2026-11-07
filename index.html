@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DoRoboty.ai dla firm – zatrudnij ludzi, którzy pracują z AI</title>
+  <meta name="description" content="Portal pracy dla osób pracujących z AI. Opublikuj ogłoszenie na 30 dni i przeglądaj aplikacje z Match Score.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F1E4A'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FFD23F'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="assets/hero-source.png" as="image">
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top" aria-label="DoRoboty.ai – początek strony">DoRoboty<span>.ai</span></a>
+      <nav aria-label="Sekcje strony" class="nav">
+        <a href="#jak-to-dziala">Jak to działa</a>
+        <a href="#kogo-znajdziesz">Kogo znajdziesz</a>
+        <a href="#oferty">Przykładowe oferty</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="btn btn-primary btn-sm" type="button" data-placeholder>Dodaj ogłoszenie</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-anim="hero-eyebrow">Dla firm</p>
+          <h1 id="hero-title" class="display" data-anim="hero-title">Zatrudnij ludzi, którzy naprawdę pracują z&nbsp;AI</h1>
+          <p class="lead" data-anim="hero-lead"><strong>DoRoboty.ai to portal pracy dla osób, które pracują z&nbsp;AI</strong> – od inżynierów po marketerów. Publikujesz ogłoszenie na 30 dni, a&nbsp;każda aplikacja przychodzi z&nbsp;Match Score.</p>
+          <div class="hero-actions" data-anim="hero-cta">
+            <button class="btn btn-primary" type="button" data-placeholder>Dodaj ogłoszenie</button>
+            <a class="link-arrow" href="#match-score">Zobacz, jak liczymy Match Score</a>
+          </div>
+          <p class="hero-stat" data-anim="hero-stat"><strong>12 000</strong> aktywnych kandydatów w maju 2026 <span>· dane z dashboardu DoRoboty.ai</span></p>
+        </div>
+
+        <figure class="hero-figure" data-anim="hero-figure">
+          <div class="raster" data-raster data-src="assets/hero-source.png">
+            <img class="raster-fallback" src="assets/hero-raster.svg" width="215" height="246"
+                 alt="Marmurowa głowa cesarza Augusta ułożona z granatowych kropek – każda kropka to jeden kandydat.">
+            <canvas aria-hidden="true"></canvas>
+          </div>
+          <article class="app-card" data-anim="hero-card" aria-label="Przykładowa aplikacja z Match Score">
+            <p class="tag">Przykładowa aplikacja</p>
+            <div class="app-card-head">
+              <div>
+                <h2 class="app-role">Specjalista/ka automatyzacji</h2>
+                <p class="app-meta">Kategoria Apply · aplikacja nr 2741</p>
+              </div>
+              <p class="score" aria-label="Match Score 82 na 100"><span>82</span><small>/100</small></p>
+            </div>
+            <ul class="mini-bars" aria-label="Składniki wyniku">
+              <li><span>Umiejętności</span><i style="--v:86"></i></li>
+              <li><span>Zadania</span><i style="--v:84"></i></li>
+              <li><span>Doświadczenie</span><i style="--v:70"></i></li>
+              <li><span>Warunki</span><i style="--v:85"></i></li>
+            </ul>
+          </article>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2. PROBLEM -->
+    <section class="problem" aria-labelledby="problem-title">
+      <div class="wrap problem-grid">
+        <h2 id="problem-title" class="display section-title" data-anim="section-title">„AI” w ogłoszeniu to jeszcze nie opis pracy</h2>
+        <div class="fake-ad" data-anim="card" aria-label="Przykład ogólnikowego ogłoszenia">
+          <p class="tag tag-muted">Typowe ogłoszenie</p>
+          <p class="fake-ad-text">Szukamy specjalisty <s>AI</s>. Mile widziana znajomość <s>narzędzi AI</s>. Praca w <s>innowacyjnym</s> zespole.</p>
+          <p class="fake-ad-note">Kto ma tu przyjść? Programista? Analityk? Ktoś, kto poprowadzi wdrożenie?</p>
+        </div>
+        <ol class="pain-list">
+          <li data-anim="card"><h3>Nie wiesz, kogo szukasz</h3><p>Potrzebujesz kogoś „od AI”, ale trudno nazwać, czy ma budować, używać, czy prowadzić zmiany.</p></li>
+          <li data-anim="card"><h3>Każdy pisze, że zna AI</h3><p>W CV i odpowiedziach słowo „AI” pojawia się wszędzie, a konkretów o pracy jest mało.</p></li>
+          <li data-anim="card"><h3>Porównywanie zjada czas</h3><p>Czytasz dziesiątki zgłoszeń, zanim wiesz, z kim w ogóle porozmawiać.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 3. JAK TO DZIAŁA -->
+    <section class="how" id="jak-to-dziala" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title" class="display section-title" data-anim="section-title">Jak to działa</h2>
+        <ol class="steps">
+          <li data-anim="card">
+            <span class="numeral" aria-hidden="true">I</span>
+            <h3>Opisz pracę z asystentem</h3>
+            <p>Asystent AI proponuje treść ogłoszenia. Zmieniasz ją, jak chcesz, zanim cokolwiek opublikujesz.</p>
+          </li>
+          <li data-anim="card">
+            <span class="numeral" aria-hidden="true">II</span>
+            <h3>Wybierz kategorię i opublikuj</h3>
+            <p>Build, Apply albo Lead. Ogłoszenie jest widoczne przez 30 dni.</p>
+          </li>
+          <li data-anim="card">
+            <span class="numeral" aria-hidden="true">III</span>
+            <h3>Zacznij od najlepiej dopasowanych</h3>
+            <p>Każda aplikacja ma Match Score. Po pierwszej rozmowie zapisujesz wynik: kontynuujemy albo odrzucamy.</p>
+          </li>
+        </ol>
+
+        <div class="match" id="match-score" data-anim="card">
+          <div class="match-copy">
+            <p class="eyebrow">Match Score – przykład</p>
+            <h3 class="display match-title">Skąd się bierze 82?</h3>
+            <p>Model językowy czyta Twoje publiczne ogłoszenie, profil kandydata i jego odpowiedź. Ocenia, jak bardzo te teksty do siebie pasują, w&nbsp;czterech obszarach o&nbsp;stałych wagach.</p>
+            <p class="note"><strong>Czym Match Score nie jest:</strong> to nie prawdopodobieństwo zatrudnienia ani test umiejętności. To podpowiedź, od kogo zacząć – decyzję podejmujesz po rozmowie.</p>
+          </div>
+          <div class="match-breakdown">
+            <p class="score score-lg" aria-label="Match Score 82 na 100"><span>82</span><small>/100</small></p>
+            <table class="breakdown">
+              <caption class="sr-only">Rozbicie przykładowego Match Score</caption>
+              <thead><tr><th scope="col">Obszar</th><th scope="col">Waga</th><th scope="col">Ocena</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Umiejętności</th><td>35%</td><td><span class="bar" style="--v:86"></span>86</td></tr>
+                <tr><th scope="row">Opisane zadania</th><td>30%</td><td><span class="bar" style="--v:84"></span>84</td></tr>
+                <tr><th scope="row">Poziom doświadczenia</th><td>20%</td><td><span class="bar" style="--v:70"></span>70</td></tr>
+                <tr><th scope="row">Warunki pracy</th><td>15%</td><td><span class="bar" style="--v:85"></span>85</td></tr>
+              </tbody>
+            </table>
+            <p class="small">0,35×86 + 0,30×84 + 0,20×70 + 0,15×85 ≈ 82. Liczby w&nbsp;przykładzie są ilustracyjne, wagi – prawdziwe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. KOGO ZNAJDZIESZ -->
+    <section class="who" id="kogo-znajdziesz" aria-labelledby="who-title">
+      <div class="wrap">
+        <div class="who-head">
+          <h2 id="who-title" class="display section-title" data-anim="section-title">Kogo tu znajdziesz</h2>
+          <dl class="stats" data-anim="card">
+            <div><dt>aktywnych kandydatów</dt><dd>12 000</dd><dd class="stat-ctx">maj 2026 · w listopadzie 2025: 6 000</dd></div>
+            <div><dt>aplikacji</dt><dd>18 000</dd><dd class="stat-ctx">maj 2026 · w listopadzie 2025: 9 000</dd></div>
+          </dl>
+        </div>
+        <p class="stats-def">Aktywny kandydat to osoba z zarejestrowaną aktywnością w danym miesiącu. Dane z dashboardu DoRoboty.ai.</p>
+
+        <div class="cats">
+          <article class="cat" data-anim="card">
+            <h3 class="display cat-name">Build</h3>
+            <p class="cat-def">Budują rozwiązania AI: integracje, kod, utrzymanie.</p>
+            <p class="cat-label">Np.</p>
+            <ul><li>Inżynier/ka LLM</li><li>Integrator/ka automatyzacji</li><li>Analityk/czka danych przygotowujący dane do modeli</li></ul>
+          </article>
+          <article class="cat" data-anim="card">
+            <h3 class="display cat-name">Apply</h3>
+            <p class="cat-def">Używają AI w codziennej pracy i zmieniają procesy.</p>
+            <p class="cat-label">Np.</p>
+            <ul><li>Marketer/ka</li><li>Projektant/ka UX</li><li>Analityk/czka operacyjny/a</li></ul>
+          </article>
+          <article class="cat" data-anim="card">
+            <h3 class="display cat-name">Lead</h3>
+            <p class="cat-def">Prowadzą inicjatywy AI: priorytety, budżet, współpraca zespołów.</p>
+            <p class="cat-label">Np.</p>
+            <ul><li>Head of AI</li><li>Product Manager/ka AI</li><li>Lider/ka transformacji</li></ul>
+          </article>
+        </div>
+        <p class="cats-note">Kategorie są szerokie – dwie oferty z tej samej kategorii mogą dotyczyć zupełnie innej pracy. Dlatego w ogłoszeniu liczy się opis zadań, a nie sama etykieta.</p>
+      </div>
+    </section>
+
+    <!-- 5. PRZYKŁADOWE OFERTY -->
+    <section class="offers" id="oferty" aria-labelledby="offers-title">
+      <canvas class="dot-field" data-dot-field aria-hidden="true"></canvas>
+      <div class="wrap">
+        <h2 id="offers-title" class="display section-title" data-anim="section-title">Tak wyglądają oferty</h2>
+        <p class="section-lead">Sześć przykładów – po dwa na kategorię. Firmy i&nbsp;widełki są fikcyjne. Pokazujemy, jak opisać pracę z&nbsp;AI konkretnie.</p>
+        <ul class="offer-grid" data-offer-grid>
+          <li class="offer" data-anim="card">
+            <p class="tag">Przykład · firma fikcyjna</p>
+            <p class="offer-cat">Build</p>
+            <h3>Inżynier/ka LLM</h3>
+            <p class="offer-co">Pegaz Płatności</p>
+            <p class="offer-ai"><b>Z AI:</b> buduje asystenta do obsługi zwrotów, testuje i poprawia odpowiedzi modelu.</p>
+            <div class="offer-foot"><span>22–28 tys. zł netto (B2B)</span><span class="score score-sm" aria-label="Przykładowy Match Score 79">79</span></div>
+          </li>
+          <li class="offer" data-anim="card">
+            <p class="tag">Przykład · firma fikcyjna</p>
+            <p class="offer-cat">Build</p>
+            <h3>Integrator/ka automatyzacji</h3>
+            <p class="offer-co">Dedal Fabryka Mebli</p>
+            <p class="offer-ai"><b>Z AI:</b> łączy model z systemem zamówień, pilnuje kosztów i logów.</p>
+            <div class="offer-foot"><span>16–21 tys. zł brutto (UoP)</span><span class="score score-sm" aria-label="Przykładowy Match Score 71">71</span></div>
+          </li>
+          <li class="offer" data-anim="card">
+            <p class="tag">Przykład · firma fikcyjna</p>
+            <p class="offer-cat">Apply</p>
+            <h3>Marketer/ka performance</h3>
+            <p class="offer-co">Ikar Media</p>
+            <p class="offer-ai"><b>Z AI:</b> tworzy warianty kampanii z modelem i sprawdza, które naprawdę działają.</p>
+            <div class="offer-foot"><span>11–14 tys. zł brutto (UoP)</span><span class="score score-sm" aria-label="Przykładowy Match Score 86">86</span></div>
+          </li>
+          <li class="offer" data-anim="card">
+            <p class="tag">Przykład · firma fikcyjna</p>
+            <p class="offer-cat">Apply</p>
+            <h3>Analityk/czka operacyjny/a</h3>
+            <p class="offer-co">Olimp Logistyka</p>
+            <p class="offer-ai"><b>Z AI:</b> automatyzuje raporty dzienne i weryfikuje wnioski modelu na danych.</p>
+            <div class="offer-foot"><span>13–17 tys. zł brutto (UoP)</span><span class="score score-sm" aria-label="Przykładowy Match Score 74">74</span></div>
+          </li>
+          <li class="offer" data-anim="card">
+            <p class="tag">Przykład · firma fikcyjna</p>
+            <p class="offer-cat">Lead</p>
+            <h3>Head of AI</h3>
+            <p class="offer-co">Minerwa Ubezpieczenia</p>
+            <p class="offer-ai"><b>Z AI:</b> ustala, które procesy automatyzować najpierw, prowadzi budżet i łączy IT z biznesem.</p>
+            <div class="offer-foot"><span>30–38 tys. zł netto (B2B)</span><span class="score score-sm" aria-label="Przykładowy Match Score 68">68</span></div>
+          </li>
+          <li class="offer" data-anim="card">
+            <p class="tag">Przykład · firma fikcyjna</p>
+            <p class="offer-cat">Lead</p>
+            <h3>Product Manager/ka AI</h3>
+            <p class="offer-co">Kronos Retail</p>
+            <p class="offer-ai"><b>Z AI:</b> decyduje, co oddać modelowi w obsłudze klienta, i mierzy efekt.</p>
+            <div class="offer-foot"><span>20–26 tys. zł brutto (UoP)</span><span class="score score-sm" aria-label="Przykładowy Match Score 81">81</span></div>
+          </li>
+        </ul>
+        <p class="small offers-note">Liczba przy ofercie to przykładowy Match Score jednego fikcyjnego kandydata.</p>
+      </div>
+    </section>
+
+    <!-- 6. CO DOSTAJESZ -->
+    <section class="get" aria-labelledby="get-title">
+      <div class="wrap get-grid">
+        <h2 id="get-title" class="display section-title" data-anim="section-title">Co dostajesz po publikacji</h2>
+        <ul class="get-list">
+          <li data-anim="card"><h3>Ogłoszenie widoczne przez 30 dni</h3><p>W wybranej kategorii: Build, Apply albo Lead.</p></li>
+          <li data-anim="card"><h3>Aplikacje z Match Score</h3><p>Wynik 0–100 z rozbiciem na cztery obszary przy każdym zgłoszeniu.</p></li>
+          <li data-anim="card"><h3>Asystent do pisania ogłoszenia</h3><p>Podpowiada konkretne zadania z AI. Ostatnie słowo należy do Ciebie.</p></li>
+          <li data-anim="card"><h3>Zapis wyniku pierwszej rozmowy</h3><p>Kontynuujemy albo odrzucamy – masz porządek w procesie w jednym miejscu.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <h2 id="faq-title" class="display section-title" data-anim="section-title">Pytania</h2>
+        <div class="faq-list">
+          <details data-anim="card">
+            <summary>Czy to tylko dla programistów?</summary>
+            <p>Nie. Programiści to głównie kategoria Build. W Apply są m.in. marketerzy, designerzy i analitycy, którzy używają AI w pracy. W Lead – osoby prowadzące wdrożenia AI w firmach.</p>
+          </details>
+          <details data-anim="card">
+            <summary>Ile to kosztuje?</summary>
+            <p>Dla kandydatów portal jest bezpłatny. Firma kupuje ogłoszenie na 30 dni, pakiet publikacji albo dostęp No Limit na ustalony okres. Publikacja z wcześniej kupionego pakietu nie jest kolejnym zakupem. Cennik z kwotami jest jeszcze niepodłączony do tej strony.</p>
+          </details>
+          <details data-anim="card">
+            <summary>Czym jest Match Score?</summary>
+            <p>To ocena od 0 do 100, którą model językowy wystawia na podstawie Twojego ogłoszenia, profilu kandydata i jego odpowiedzi. Składa się z umiejętności (35%), opisanych zadań (30%), poziomu doświadczenia (20%) i warunków pracy (15%). Nie jest prawdopodobieństwem zatrudnienia ani testem umiejętności. <a href="#match-score">Zobacz przykład</a>.</p>
+          </details>
+          <details data-anim="card">
+            <summary>Jak sprawdzacie oferty?</summary>
+            <p>Każde ogłoszenie trafia do jednej z trzech kategorii, a asystent pomaga opisać konkretne zadania z AI. Szczegółowe zasady moderacji opiszemy tutaj przed uruchomieniem strony.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FINAŁ -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="wrap final-inner">
+        <h2 id="final-title" class="display final-title" data-anim="section-title">Opisz pracę z&nbsp;AI konkretnie. Kandydaci już tu&nbsp;są.</h2>
+        <button class="btn btn-primary btn-lg" type="button" data-placeholder data-anim="final-cta">Dodaj ogłoszenie</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p><strong>DoRoboty.ai</strong> – portal pracy dla osób pracujących z AI. Prototyp strony.</p>
+      <p>Grafika: <a href="https://www.metmuseum.org/art/collection/search/247993">Marble portrait of the emperor Augustus</a>, The Metropolitan Museum of Art, domena publiczna (CC0), przetworzona na raster.</p>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

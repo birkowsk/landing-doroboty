@@ -1,0 +1,7 @@
+# w repo tylko sama strona – reszta zostaje lokalnie
+DR-CTX.md
+LANDING_PROMPT.md
+README.md
+compose.yaml
+tools/
+.DS_Store
