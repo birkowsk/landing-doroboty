@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 660" width="530" height="660">
+  <!-- Oryginalna ilustracja robota do rastra DoRoboty.ai.
+       Czarne tło = brak kropek. Skala szarości = rozmiar kropki. Czysta czerwień = kropki różowe. -->
+  <defs>
+    <linearGradient id="head" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4F4F4"/><stop offset=".55" stop-color="#C8C8C8"/><stop offset="1" stop-color="#7A7A7A"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B8B8B8"/><stop offset=".6" stop-color="#6E6E6E"/><stop offset="1" stop-color="#3A3A3A"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9A9A9A"/><stop offset=".5" stop-color="#DADADA"/><stop offset="1" stop-color="#7C7C7C"/>
+    </linearGradient>
+  </defs>
+  <rect width="530" height="660" fill="#000"/>
+
+  <!-- tułów i ramiona -->
+  <path d="M40 660 L70 540 Q82 498 128 492 L402 492 Q448 498 460 540 L490 660 Z" fill="url(#body)" stroke="#4A4A4A" stroke-width="6"/>
+  <path d="M128 492 Q110 560 118 660" fill="none" stroke="#5A5A5A" stroke-width="5"/>
+  <path d="M402 492 Q420 560 412 660" fill="none" stroke="#5A5A5A" stroke-width="5"/>
+  <!-- panel na piersi -->
+  <rect x="190" y="540" width="150" height="88" rx="16" fill="#262626" stroke="#555" stroke-width="5"/>
+  <circle cx="226" cy="584" r="15" fill="#FF0000"/>
+  <circle cx="265" cy="584" r="15" fill="#9A9A9A"/>
+  <circle cx="304" cy="584" r="15" fill="#FF0000"/>
+
+  <!-- szyja -->
+  <rect x="222" y="430" width="86" height="66" fill="url(#metal)" stroke="#4A4A4A" stroke-width="5"/>
+  <line x1="222" y1="452" x2="308" y2="452" stroke="#5A5A5A" stroke-width="5"/>
+  <line x1="222" y1="474" x2="308" y2="474" stroke="#5A5A5A" stroke-width="5"/>
+
+  <!-- antena -->
+  <rect x="258" y="88" width="14" height="70" fill="url(#metal)"/>
+  <circle cx="265" cy="74" r="24" fill="#FF0000"/>
+
+  <!-- uszy -->
+  <rect x="78" y="236" width="44" height="112" rx="14" fill="url(#metal)" stroke="#4A4A4A" stroke-width="5"/>
+  <rect x="408" y="236" width="44" height="112" rx="14" fill="url(#metal)" stroke="#4A4A4A" stroke-width="5"/>
+
+  <!-- głowa -->
+  <rect x="112" y="150" width="306" height="286" rx="54" fill="url(#head)" stroke="#4A4A4A" stroke-width="7"/>
+  <!-- nity -->
+  <circle cx="148" cy="186" r="8" fill="#6A6A6A"/><circle cx="382" cy="186" r="8" fill="#6A6A6A"/>
+  <circle cx="148" cy="400" r="8" fill="#6A6A6A"/><circle cx="382" cy="400" r="8" fill="#6A6A6A"/>
+
+  <!-- wizjer i oczy -->
+  <rect x="146" y="212" width="238" height="96" rx="44" fill="#1C1C1C" stroke="#3A3A3A" stroke-width="5"/>
+  <circle cx="214" cy="260" r="30" fill="#FF0000"/>
+  <circle cx="316" cy="260" r="30" fill="#FF0000"/>
+  <circle cx="204" cy="250" r="9" fill="#FFFFFF"/>
+  <circle cx="306" cy="250" r="9" fill="#FFFFFF"/>
+
+  <!-- usta: kratka -->
+  <rect x="190" y="344" width="150" height="54" rx="14" fill="#262626" stroke="#3A3A3A" stroke-width="5"/>
+  <rect x="210" y="354" width="12" height="34" rx="4" fill="#D0D0D0"/>
+  <rect x="236" y="354" width="12" height="34" rx="4" fill="#D0D0D0"/>
+  <rect x="262" y="354" width="12" height="34" rx="4" fill="#D0D0D0"/>
+  <rect x="288" y="354" width="12" height="34" rx="4" fill="#D0D0D0"/>
+  <rect x="314" y="354" width="12" height="34" rx="4" fill="#D0D0D0"/>
+</svg>
