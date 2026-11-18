@@ -1,0 +1,227 @@
+/* DoRoboty.ai – komponenty wspólne dla landingu i ekranów aplikacji. Tylko tokeny z tokens.css. Zasady: .claude/skills/doroboty-landing-ui/SKILL.md */
+
+/* ---------- typografia aplikacji: Anton tylko H1 i liczby; tytuły to IBM Plex Sans 600 ---------- */
+.h1 { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; font-size: var(--fs-h1); line-height: 1.1; letter-spacing: .01em; color: var(--text); }
+.h2 { font-size: var(--fs-h2); font-weight: 600; line-height: 1.2; color: var(--text); }
+.h3 { font-size: var(--fs-h3); font-weight: 600; line-height: 1.25; color: var(--text); }
+.lead { font-size: var(--fs-lead); color: var(--text-2); }
+.eyebrow { font-size: var(--fs-caption); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--sun); margin-bottom: var(--s-4); }
+.small { font-size: var(--fs-small); color: var(--text-2); }
+
+/* ---------- karty: 2 powierzchnie, linia 1px, bez poświaty ---------- */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: var(--s-5); }
+.card-strong { background: var(--surface-strong); }
+.card-accent { border-color: var(--line-accent); }
+
+/* ---------- tag i pigułka ---------- */
+.tag {
+  display: inline-block; font-size: var(--fs-caption); font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--sun); border: 1px solid var(--line-fact); padding: 3px 10px; border-radius: var(--r-pill);
+}
+.tag-muted { color: var(--text-2); border-color: var(--line); }
+/* widełki: kwota, waluta, forma i okres razem; to fakt, nie akcja */
+.salary {
+  display: inline-flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
+  font-size: var(--fs-small); font-weight: 600; color: var(--text);
+  border: 1px solid var(--line-fact); border-radius: var(--r-pill); padding: 4px 12px;
+}
+
+/* ---------- przyciski: jedna rodzina, wysokości 40 / 48 / 56 ---------- */
+.btn {
+  appearance: none; border: 0; cursor: pointer; border-radius: var(--r-btn);
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: 700 var(--fs-body)/1 var(--f-text); min-height: 48px; padding: 0 28px; letter-spacing: .02em;
+  text-decoration: none; transition: transform .15s ease, filter .15s ease, border-color .15s ease;
+}
+.btn-sm { min-height: 40px; padding: 0 18px; font-size: var(--fs-small); }
+.btn-lg { min-height: 56px; padding: 0 40px; font-size: var(--fs-lead); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; transform: none; filter: none; }
+
+/* główna akcja widoku: gradient, bez zewnętrznej poświaty */
+.btn-primary { background: var(--grad-btn); color: var(--ink); box-shadow: var(--btn-highlight); }
+.btn-primary:hover:not(:disabled) { transform: translateY(-1px); filter: brightness(1.08); }
+.btn-primary:active:not(:disabled) { transform: translateY(1px); }
+
+/* akcja drugorzędna: linia zamiast wypełnienia */
+.btn-secondary { background: transparent; color: var(--text); box-shadow: 0 0 0 1px var(--line-strong) inset; }
+.btn-secondary:hover:not(:disabled) { box-shadow: 0 0 0 1px var(--line-accent) inset; }
+.btn-secondary[aria-pressed="true"] { background: var(--surface-strong); box-shadow: 0 0 0 1px var(--line-accent) inset; }
+
+/* akcja w wierszu listy */
+.btn-ghost { background: transparent; color: var(--text); min-height: 40px; padding: 0 12px; }
+.btn-ghost::after { content: "→"; }
+.btn-ghost:hover:not(:disabled) { color: var(--cyan); }
+
+.link-arrow { font-weight: 600; color: var(--cyan); text-underline-offset: 5px; }
+.link-arrow::after { content: " ↓"; }
+
+/* ---------- chip wyniku (Match Score): turkus = dane ---------- */
+.score {
+  flex: none; display: inline-flex; align-items: baseline; gap: 2px;
+  background: var(--cyan); color: var(--ink); border-radius: var(--r-sm);
+  font-family: var(--f-display); font-size: var(--fs-score); line-height: 1; padding: 9px 11px 7px;
+  box-shadow: var(--glow-cyan);
+}
+.score small { font-family: var(--f-text); font-size: var(--fs-caption); font-weight: 600; }
+.score-lg { font-size: var(--fs-score-lg); padding: 14px 18px 10px; border-radius: var(--r); }
+.score-lg small { font-size: var(--fs-h3); }
+.score-sm { font-size: var(--fs-score-sm); padding: 7px 9px 5px; }
+
+/* ---------- pole formularza ---------- */
+.field { display: grid; gap: 6px; }
+.field > label, .field-label { font-size: var(--fs-small); font-weight: 600; color: var(--text); }
+.field input, .field select, .field textarea {
+  font: 400 var(--fs-body)/1.4 var(--f-text); color: var(--text); background: var(--night);
+  border: 1px solid var(--line); border-radius: var(--r-sm); padding: 12px 14px; min-height: 48px; width: 100%;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--text-2); opacity: .8; }
+.field input:hover, .field select:hover, .field textarea:hover { border-color: var(--line-accent); }
+.field [aria-invalid="true"] { border-color: var(--danger); }
+.field-hint { font-size: var(--fs-caption); color: var(--text-2); }
+.field-error { font-size: var(--fs-small); color: var(--danger); }
+.field-error::before { content: "⚠ "; }
+
+/* ---------- komunikat: nie może wyglądać jak przycisk ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 24px) scale(.96);
+  display: flex; align-items: center; gap: 12px;
+  background: var(--surface-strong); color: var(--text); padding: 16px 24px; font-weight: 600; font-size: var(--fs-body);
+  border: 1px solid var(--line-accent); border-radius: var(--r-btn); box-shadow: var(--shadow-pop);
+  max-width: calc(100% - 32px); width: max-content;
+  opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; z-index: 200;
+}
+.toast::before { content: "⚠"; font-size: var(--fs-lead); line-height: 1; color: var(--sun); }
+.toast.is-visible { opacity: 1; transform: translate(-50%, 0) scale(1); }
+
+/* ====================== komponenty ekranów aplikacji ====================== */
+
+/* ---------- baner demo i nagłówek aplikacji ---------- */
+.demo-banner { background: var(--surface); border-bottom: 1px solid var(--line); color: var(--sun); font-size: var(--fs-caption); font-weight: 600; text-align: center; padding: var(--s-2) var(--gutter); }
+.app-header { position: sticky; top: 0; z-index: 50; background: var(--night); border-bottom: 1px solid var(--line); }
+.app-header-inner { display: flex; align-items: center; flex-wrap: wrap; gap: var(--s-2) var(--s-5); min-height: 64px; padding-top: var(--s-2); padding-bottom: var(--s-2); }
+.app-logo {
+  font-family: var(--f-display); font-size: var(--fs-h2); line-height: 1.2; text-decoration: none; text-transform: uppercase; letter-spacing: .02em;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--pink);
+}
+.app-nav { display: flex; gap: var(--s-1); margin-left: auto; }
+@media (max-width: 640px) { .app-header-inner > .btn { margin-left: auto; } .app-nav { margin-left: 0; order: 3; width: 100%; } }
+.app-nav a { color: var(--text-2); text-decoration: none; font-size: var(--fs-small); font-weight: 500; padding: var(--s-2) var(--s-3); border-radius: var(--r-sm); border: 1px solid transparent; }
+.app-nav a:hover { color: var(--text); }
+.app-nav a[aria-current="page"] { color: var(--text); background: var(--surface-strong); border-color: var(--line-accent); }
+
+/* ---------- segment (filtr jednokrotnego wyboru z przycisków) ---------- */
+.segment { display: inline-flex; flex-wrap: wrap; gap: var(--s-1); padding: var(--s-1); border: 1px solid var(--line); border-radius: var(--r-btn); background: var(--surface); }
+.segment button {
+  appearance: none; cursor: pointer; display: inline-flex; align-items: center; gap: var(--s-2);
+  border: 1px solid transparent; background: transparent; color: var(--text-2);
+  font: 600 var(--fs-small)/1 var(--f-text); min-height: 40px; padding: 0 var(--s-4); border-radius: var(--r-sm);
+}
+.segment button:hover { color: var(--text); }
+.segment button[aria-pressed="true"] { background: var(--surface-strong); border-color: var(--line-accent); color: var(--text); }
+.segment .count { font-size: var(--fs-caption); font-weight: 400; color: var(--text-2); }
+
+/* ---------- wiersz oferty z kolumną faktów ---------- */
+.job-row { display: grid; grid-template-columns: minmax(0, 1fr) 264px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); transition: border-color .15s ease; }
+.job-row:hover, .job-row:focus-within { border-color: var(--line-accent); }
+.job-main { padding: var(--s-5); }
+/* nazwa firmy: zawsze pełna, w osobnej linii nad tytułem; bez inicjałów i skrótów */
+.job-company { font-size: var(--fs-body); font-weight: 600; line-height: 1.3; color: var(--sun); margin-bottom: var(--s-1); overflow-wrap: anywhere; }
+.job-title { overflow-wrap: anywhere; }
+.job-title a { color: var(--text); text-decoration: none; }
+.job-title a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.job-facts { display: grid; gap: var(--s-3); align-content: start; justify-items: start; padding: var(--s-5); border-left: 1px solid var(--line); }
+.job-facts .btn-ghost { padding-left: 0; }
+.job-facts .meter { justify-self: stretch; }
+.job-score { display: inline-flex; align-items: center; gap: var(--s-2); }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-4); font-size: var(--fs-small); color: var(--text-2); margin-top: var(--s-2); }
+.skills { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+.skills li { font-size: var(--fs-caption); color: var(--text); border: 1px solid var(--line); border-radius: var(--r-pill); padding: var(--s-1) var(--s-3); }
+.salary { white-space: nowrap; }
+.salary-wrap { display: inline-grid; gap: var(--s-1); justify-items: start; }
+.salary-note { font-size: var(--fs-caption); color: var(--text-2); }
+@media (max-width: 760px) {
+  .job-row { grid-template-columns: minmax(0, 1fr); }
+  .job-main { padding: var(--s-4); }
+  .job-facts { border-left: 0; border-top: 1px solid var(--line); padding: var(--s-4); grid-auto-flow: row; }
+}
+
+/* ---------- panel faktów i lista faktów ---------- */
+.facts { display: grid; gap: var(--s-4); }
+.facts .btn { width: 100%; }
+.facts-list > div { display: flex; justify-content: space-between; gap: var(--s-4); padding: var(--s-3) 0; border-bottom: 1px solid var(--line); font-size: var(--fs-small); }
+.facts-list dt { color: var(--text-2); }
+.facts-list dd { font-weight: 600; text-align: right; }
+
+/* ---------- miernik (dane = turkus) ---------- */
+.meter { display: block; height: 8px; min-width: 60px; background: var(--night); border-radius: var(--r-pill); overflow: hidden; }
+.meter::after { content: ""; display: block; height: 100%; width: calc(var(--v) * 1%); background: var(--cyan); border-radius: var(--r-pill); }
+.breakdown-list li { display: grid; grid-template-columns: minmax(0, 1fr) 48px minmax(72px, 180px) 32px; gap: var(--s-3); align-items: center; padding: var(--s-3) 0; border-bottom: 1px solid var(--line); font-size: var(--fs-small); }
+.breakdown-list .w { color: var(--text-2); }
+.breakdown-list .n { font-weight: 600; text-align: right; }
+
+/* ---------- status ---------- */
+.status { display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--fs-caption); font-weight: 600; color: var(--text); white-space: nowrap; }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: var(--r-pill); background: var(--text-2); }
+.status-active::before { background: var(--cyan); }
+.status-new::before { background: var(--pink); }
+
+/* ---------- tabela ---------- */
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+.table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: var(--fs-small); }
+.table th, .table td { text-align: left; padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--line); vertical-align: middle; }
+.table thead th { font-size: var(--fs-caption); font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--sun); }
+.table tbody th { font-weight: 600; }
+.table tbody tr:last-child > * { border-bottom: 0; }
+
+/* ---------- liczba statystyki ---------- */
+.stat-num { font-family: var(--f-display); font-size: var(--fs-score); line-height: 1.1; color: var(--cyan); }
+.stat-num-lg { font-size: var(--fs-stat-lg); line-height: 1; }
+.job-apps { display: inline-flex; align-items: baseline; gap: var(--s-2); }
+.job-days { display: grid; gap: var(--s-1); max-width: 320px; margin-top: var(--s-4); }
+
+/* ---------- stan pusty ---------- */
+.empty { display: grid; gap: var(--s-4); justify-items: center; text-align: center; padding: var(--s-7) var(--s-5); }
+
+/* ---------- pole wyboru i wybór roli ---------- */
+.check { display: flex; align-items: center; gap: var(--s-3); font-size: var(--fs-small); min-height: 32px; cursor: pointer; }
+.check input { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--pink); }
+.choice { position: relative; display: grid; gap: var(--s-1); cursor: pointer; }
+.choice input { position: absolute; opacity: 0; }
+.choice:hover { border-color: var(--line-accent); }
+.choice:has(input:checked) { background: var(--surface-strong); border-color: var(--line-accent); }
+.choice:has(input:focus-visible) { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.choice:has(input:checked) .choice-mark::before { content: "✓ "; color: var(--cyan); }
+
+/* ---------- link powrotu ---------- */
+.back-link { display: inline-block; color: var(--text-2); text-decoration: none; font-size: var(--fs-small); margin-bottom: var(--s-4); }
+.back-link::before { content: "← "; }
+.back-link:hover { color: var(--text); }
+
+/* ---------- opis oferty: najważniejsze na wierzchu ---------- */
+/* wyróżnik: jedno zdanie, które odpowiada na „co tu się robi z AI” */
+.callout { border-left: 3px solid var(--pink); }
+.callout .eyebrow { margin-bottom: var(--s-2); }
+.callout-text { font-size: var(--fs-lead); line-height: 1.45; color: var(--text-2); max-width: 60ch; }
+/* w opisach zwykły tekst jest pomocniczy, a najważniejsza fraza (strong) pełnym kolorem */
+.callout-text strong, .num-list strong, .check-list strong, .perks strong { color: var(--text); font-weight: 600; }
+.num-list, .check-list { display: grid; gap: var(--s-3); color: var(--text-2); }
+.num-list { counter-reset: n; }
+.num-list li { counter-increment: n; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: var(--s-3); align-items: baseline; }
+.num-list li::before { content: counter(n, decimal-leading-zero); font-family: var(--f-display); font-size: var(--fs-h3); line-height: 1; color: var(--cyan); }
+.check-list li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: var(--s-3); align-items: baseline; }
+.check-list li::before { content: "✓"; font-weight: 700; color: var(--cyan); }
+.perks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); }
+.perks li { background: var(--surface-strong); border: 1px solid var(--line); border-radius: var(--r-sm); padding: var(--s-4); font-size: var(--fs-small); color: var(--text-2); }
+@media (max-width: 760px) { .perks { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- okno modalne (np. wybór roli): zawsze wyśrodkowane ---------- */
+.modal { margin: auto; border: 1px solid var(--line-accent); border-radius: var(--r-lg); background: var(--surface); color: var(--text); padding: var(--s-6); width: min(620px, calc(100% - 2 * var(--s-4))); box-shadow: var(--shadow-pop); }
+.modal::backdrop { background: var(--backdrop); }
+.modal-head { display: flex; justify-content: space-between; align-items: start; gap: var(--s-4); margin-bottom: var(--s-4); }
+.modal-body { display: grid; gap: var(--s-5); }
+.icon-btn { appearance: none; flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; background: transparent; color: var(--text); border: 1px solid var(--line-strong); border-radius: var(--r-sm); font: 400 var(--fs-lead)/1 var(--f-text); }
+.icon-btn:hover { border-color: var(--line-accent); }
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); border: 0; padding: 0; margin: 0; }
+.choices legend { padding: 0; margin-bottom: var(--s-3); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+@media (max-width: 640px) { .choices { grid-template-columns: minmax(0, 1fr); } .modal { padding: var(--s-5); } }

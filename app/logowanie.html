@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wybór roli | DoRoboty.ai (demo)</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#140A2E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens.css?v=5">
+  <link rel="stylesheet" href="../components.css?v=6">
+  <link rel="stylesheet" href="../app.css?v=5">
+</head>
+<body data-page="login">
+  <p class="demo-banner">Wersja demonstracyjna · dane fikcyjne · nic nie jest wysyłane ani zapisywane na serwerze</p>
+  <header class="app-header">
+    <div class="wrap app-header-inner">
+      <a class="app-logo" href="../index.html" aria-label="DoRoboty.ai – strona dla firm">DoRoboty.ai</a>
+      <nav class="app-nav" aria-label="Aplikacja">
+        <a href="oferty.html">Oferty pracy</a>
+        <a href="pracodawca.html">Panel pracodawcy</a>
+      </nav>
+      <a class="btn btn-secondary btn-sm" href="logowanie.html" data-role>Wybierz rolę</a>
+    </div>
+  </header>
+  <div class="screen-head">
+    <div class="wrap">
+      <p class="eyebrow">Wersja demonstracyjna</p>
+      <h1 class="h1">Wersja demo DoRoboty.ai</h1>
+      <p class="lead">To atrapa logowania: bez hasła, bez konta i bez wysyłania danych. Wybór zapisuje się tylko w tej przeglądarce.</p>
+    </div>
+  </div>
+  <main class="wrap app-main">
+    <div class="actions">
+      <button class="btn btn-primary" type="button" data-open-role>Wybierz rolę</button>
+      <a class="btn btn-secondary" href="oferty.html">Przejdź do ofert bez roli</a>
+    </div>
+  </main>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <noscript><p class="wrap small">Ten ekran demonstracyjny wymaga JavaScriptu.</p></noscript>
+  <script src="data.js?v=2"></script>
+  <script src="app.js?v=5"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oferty pracy | DoRoboty.ai (demo)</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#140A2E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens.css?v=5">
+  <link rel="stylesheet" href="../components.css?v=6">
+  <link rel="stylesheet" href="../app.css?v=5">
+</head>
+<body data-page="list">
+  <p class="demo-banner">Wersja demonstracyjna · dane fikcyjne · nic nie jest wysyłane ani zapisywane na serwerze</p>
+  <header class="app-header">
+    <div class="wrap app-header-inner">
+      <a class="app-logo" href="../index.html" aria-label="DoRoboty.ai – strona dla firm">DoRoboty.ai</a>
+      <nav class="app-nav" aria-label="Aplikacja">
+        <a href="oferty.html" aria-current="page">Oferty pracy</a>
+        <a href="pracodawca.html">Panel pracodawcy</a>
+      </nav>
+      <a class="btn btn-secondary btn-sm" href="logowanie.html" data-role>Wybierz rolę</a>
+    </div>
+  </header>
+  <div class="screen-head">
+    <div class="wrap">
+      <p class="eyebrow">Przykład · firmy fikcyjne</p>
+      <h1 class="h1">Oferty pracy z AI</h1>
+      <p class="lead">Każda oferta mówi konkretnie, co w tej pracy robi się z AI. Kategorie: Build, Apply i Lead.</p>
+    </div>
+  </div>
+  <main class="wrap app-main">
+    <div class="toolbar">
+      <form class="field search" role="search" data-search-form>
+        <label for="q">Szukaj</label>
+        <input id="q" type="search" placeholder="Stanowisko, firma lub umiejętność" autocomplete="off" data-search>
+      </form>
+      <div class="field">
+        <span class="field-label" id="cat-label">Kategoria</span>
+        <div class="segment" role="group" aria-labelledby="cat-label" data-categories></div>
+      </div>
+      <div class="field sort">
+        <label for="sort">Sortowanie</label>
+        <select id="sort" data-sort><option value="new">Najnowsze</option><option value="score">Najwyższy Match Score</option></select>
+      </div>
+    </div>
+    <h2 class="h2 results-title" id="results-title">Oferty <span class="tag tag-muted" data-count aria-live="polite">0</span></h2>
+    <div class="list-layout">
+      <details class="card filters" open data-filters>
+        <summary class="h3">Filtry</summary>
+        <div class="filters-body">
+          <fieldset class="filters-group">
+            <legend class="eyebrow">Tryb pracy</legend>
+            <label class="check"><input type="checkbox" value="Zdalnie" data-mode> Zdalnie</label>
+            <label class="check"><input type="checkbox" value="Hybrydowo" data-mode> Hybrydowo</label>
+            <label class="check"><input type="checkbox" value="Stacjonarnie" data-mode> Stacjonarnie</label>
+          </fieldset>
+          <fieldset class="filters-group">
+            <legend class="eyebrow">Wynagrodzenie</legend>
+            <label class="check"><input type="checkbox" data-salary-only> Tylko oferty z widełkami</label>
+          </fieldset>
+        </div>
+      </details>
+      <div>
+        <ul class="job-list" aria-labelledby="results-title" data-list></ul>
+        <div class="card empty" data-empty hidden>
+          <p class="h3">Brak ofert dla tych kryteriów</p>
+          <p class="small">Zmień wyszukiwanie albo wyczyść filtry.</p>
+          <button class="btn btn-secondary" type="button" data-clear>Wyczyść filtry</button>
+        </div>
+        <p class="small note">Match Score przy ofercie to przykładowy wynik jednego fikcyjnego kandydata.</p>
+      </div>
+    </div>
+  </main>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <noscript><p class="wrap small">Ten ekran demonstracyjny wymaga JavaScriptu.</p></noscript>
+  <script src="data.js?v=2"></script>
+  <script src="app.js?v=5"></script>
+</body>
+</html>

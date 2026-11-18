@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel pracodawcy | DoRoboty.ai (demo)</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#140A2E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens.css?v=5">
+  <link rel="stylesheet" href="../components.css?v=6">
+  <link rel="stylesheet" href="../app.css?v=5">
+</head>
+<body data-page="employer">
+  <p class="demo-banner">Wersja demonstracyjna · dane fikcyjne · nic nie jest wysyłane ani zapisywane na serwerze</p>
+  <header class="app-header">
+    <div class="wrap app-header-inner">
+      <a class="app-logo" href="../index.html" aria-label="DoRoboty.ai – strona dla firm">DoRoboty.ai</a>
+      <nav class="app-nav" aria-label="Aplikacja">
+        <a href="oferty.html">Oferty pracy</a>
+        <a href="pracodawca.html" aria-current="page">Panel pracodawcy</a>
+      </nav>
+      <a class="btn btn-secondary btn-sm" href="logowanie.html" data-role>Wybierz rolę</a>
+    </div>
+  </header>
+  <main class="wrap app-main">
+    <div class="panel-layout">
+      <nav class="card side-nav" aria-label="Panel pracodawcy">
+        <a href="pracodawca.html" aria-current="page">Ogłoszenia</a>
+        <button type="button" data-placeholder>Aplikacje</button>
+        <button type="button" data-placeholder>Profil firmy</button>
+        <button type="button" data-placeholder>Pakiety i faktury</button>
+      </nav>
+      <div>
+        <p class="card card-accent small guest-note" data-guest hidden>Oglądasz panel bez wybranej roli pracodawcy. <a href="logowanie.html" data-open-role>Wybierz rolę</a>, żeby zobaczyć go jak firma.</p>
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow" data-company>Firma</p>
+            <h1 class="h1">Twoje ogłoszenia</h1>
+          </div>
+          <button class="btn btn-primary" type="button" data-placeholder>Dodaj ogłoszenie</button>
+        </div>
+        <div class="stats-row" data-stats></div>
+        <div class="segment" role="group" aria-label="Status ogłoszeń" data-statuses></div>
+        <ul class="job-list note" data-postings></ul>
+        <section class="block" aria-labelledby="apps-title">
+          <h2 class="h2" id="apps-title">Ostatnie aplikacje</h2>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th scope="col">Kandydat</th><th scope="col">Ogłoszenie</th><th scope="col">Kiedy</th><th scope="col">Match Score</th><th scope="col">Status</th></tr></thead>
+              <tbody data-applications></tbody>
+            </table>
+          </div>
+          <p class="small note">Osoby i wyniki są fikcyjne. Match Score to podpowiedź, od kogo zacząć; decyzję podejmujesz po rozmowie.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <noscript><p class="wrap small">Ten ekran demonstracyjny wymaga JavaScriptu.</p></noscript>
+  <script src="data.js?v=2"></script>
+  <script src="app.js?v=5"></script>
+</body>
+</html>
