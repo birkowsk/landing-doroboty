@@ -1,0 +1,76 @@
+/* DoRoboty.ai – tokeny (jedno źródło prawdy). Kierunek: „Neon na solidnym”. Zasady: .claude/skills/doroboty-landing-ui/SKILL.md */
+:root {
+  /* tła */
+  --night: #140A2E;
+  --night-2: #1C0F3D;
+  --purple: #2E1460;
+  /* solidne powierzchnie kart (bez przezroczystości) */
+  --surface: #221048;
+  --surface-strong: #2B1560;
+  /* linie 1px */
+  --line: rgba(160, 120, 255, 0.28);
+  --line-strong: rgba(160, 120, 255, 0.6);   /* linia przycisku drugorzędnego */
+  --line-accent: rgba(255, 62, 165, 0.7);
+  --line-fact: rgba(255, 209, 102, 0.6);
+  /* tekst */
+  --text: #F6F0FF;
+  --text-2: #C9B8EC;
+  --ink: #140A2E;               /* tekst na jasnych powierzchniach */
+  /* akcenty z rolą: róż = akcja/aktywne, turkus = wynik/dane, żółty = metadane */
+  --pink: #FF3EA5;
+  --cyan: #2DE2E6;
+  --sun: #FFD166;
+  --orange: #FF8C42;            /* tylko scena i koniec gradientu */
+  --glow-pink: rgba(255, 62, 165, 0.22);  /* poświata za nagłówkiem ekranu */
+  --btn-highlight: 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+  --glow-cyan: 0 0 22px rgba(45, 226, 230, 0.45);   /* poświata chipa wyniku */
+  --backdrop: rgba(8, 3, 20, 0.8);                  /* tło pod oknem modalnym */
+  --shadow-pop: 0 12px 32px rgba(0, 0, 0, 0.5);     /* komunikat, menu */
+  --danger: #FF6B6B;            /* błąd (propozycja do zatwierdzenia); z ikoną i tekstem */
+  /* gradienty */
+  --grad: linear-gradient(90deg, #4FA9FF 0%, #B04CFF 35%, #FF3EA5 65%, #FF8C42 100%);
+  --grad-btn: linear-gradient(90deg, #2DE2E6 0%, #7B6CFF 45%, #FF3EA5 100%);
+  --grad-sun: linear-gradient(180deg, #E8743F 0%, #D9416F 45%, #A12A8C 75%, #6B1D86 100%);
+  /* scena (hero, pas „Kogo znajdziesz”, finał) */
+  --sky-mid: #23104A;
+  --sky-top: #3A1463;
+  --violet: #8A2BE2;
+  --magenta-deep: #B0307E;
+  --coral: #FF6B6B;
+  --silhouette: #12072B;
+  --silhouette-2: #1A0B38;
+  --silhouette-deep: #0E0624;
+
+  /* typografia */
+  --f-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --f-text: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-caption: 13px;
+  --fs-small: 15px;
+  --fs-body: 17px;
+  --fs-h3: 22px;
+  --fs-h2: 28px;
+  --fs-lead: 20px;
+  --fs-score-sm: 22px;
+  --fs-score: 34px;
+  --fs-score-lg: 96px;
+  --fs-stat-lg: 56px;
+  --fs-h1: clamp(36px, 5vw, 56px);
+  --fs-title: clamp(28px, 3.6vw, 40px);  /* tytuł oferty na ekranie szczegółów (Plex 600) */
+
+  /* geometria */
+  --r-sm: 10px;                 /* pola, małe elementy, chip wyniku */
+  --r-btn: 12px;                /* przyciski */
+  --r: 16px;                    /* karty */
+  --r-lg: 20px;                 /* karta wyróżniona */
+  --r-pill: 99px;               /* tagi, pigułki */
+
+  /* odstępy: skala 4/8 */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px;
+
+  /* układ */
+  --gutter: 16px;
+  --max: 1280px;
+  --sec: clamp(72px, 10vw, 140px);
+}
+@media (min-width: 768px) { :root { --gutter: 32px; } }
+@media (min-width: 1200px) { :root { --gutter: 48px; } }

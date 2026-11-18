@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Styleguide – DoRoboty.ai</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#140A2E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css?v=5">
+  <link rel="stylesheet" href="components.css?v=6">
+  <link rel="stylesheet" href="app.css?v=5">
+</head>
+<body>
+  <header class="screen-head">
+    <div class="wrap">
+      <p class="eyebrow">Wzorzec komponentów</p>
+      <h1 class="h1">Styleguide DoRoboty.ai</h1>
+      <p class="lead">Tokeny i komponenty kierunku „Neon na solidnym”. Każdy nowy ekran ma używać tylko tego, co jest tutaj. Zasady: <code>.claude/skills/doroboty-landing-ui/SKILL.md</code>.</p>
+      <nav class="sg-nav" aria-label="Sekcje styleguide">
+        <a href="#kolory">Kolory</a><a href="#typografia">Typografia</a><a href="#geometria">Geometria i odstępy</a>
+        <a href="#przyciski">Przyciski</a><a href="#karty">Karty</a><a href="#fakty">Tagi, widełki, wynik</a>
+        <a href="#pola">Pola</a><a href="#komunikat">Komunikat</a><a href="#aplikacja">Komponenty aplikacji</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap sg-main">
+
+    <section class="sg-section" id="kolory" aria-labelledby="h-kolory">
+      <h2 class="h2" id="h-kolory">Kolory</h2>
+      <p class="small">Jeden akcent z rolą: róż to akcja i stan aktywny, turkus to wynik i dane, żółty to metadane. Powierzchnie są solidne.</p>
+      <div class="sg-grid">
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--night)"></div><span class="sg-label"><code>--night</code> tło ekranu</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--night-2)"></div><span class="sg-label"><code>--night-2</code> naprzemienne tło</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--surface)"></div><span class="sg-label"><code>--surface</code> karta</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--surface-strong)"></div><span class="sg-label"><code>--surface-strong</code> karta wyróżniona</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--pink)"></div><span class="sg-label"><code>--pink</code> akcja, aktywne</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--cyan)"></div><span class="sg-label"><code>--cyan</code> wynik, dane</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--sun)"></div><span class="sg-label"><code>--sun</code> metadane</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--danger)"></div><span class="sg-label"><code>--danger</code> błąd (z ikoną i tekstem)</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--text)"></div><span class="sg-label"><code>--text</code> tekst główny</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--text-2)"></div><span class="sg-label"><code>--text-2</code> tekst pomocniczy</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--line)"></div><span class="sg-label"><code>--line</code> linia 1px</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--line-accent)"></div><span class="sg-label"><code>--line-accent</code> linia aktywna</span></div>
+        <div class="sg-cell"><div class="sg-sw" style="--c: var(--line-fact)"></div><span class="sg-label"><code>--line-fact</code> linia faktu</span></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="typografia" aria-labelledby="h-typografia">
+      <h2 class="h2" id="h-typografia">Typografia</h2>
+      <p class="small">Anton tylko dla H1 i liczb. Tytuły ofert i kart to IBM Plex Sans 600 w normalnej wielkości liter.</p>
+      <div class="sg-type">
+        <div><span class="sg-label"><code>.h1</code> Anton, 36–56 px</span><span class="h1">Tytuł ekranu</span></div>
+        <div><span class="sg-label"><code>.h2</code> Plex 600, 28 px</span><span class="h2">Nagłówek sekcji</span></div>
+        <div><span class="sg-label"><code>.h3</code> Plex 600, 22 px</span><span class="h3">Senior Product Designer / AI Experience Lead — narzędzia dla zespołów operacyjnych</span></div>
+        <div><span class="sg-label"><code>.lead</code> 20 px</span><span class="lead">Opis ekranu w jednym lub dwóch zdaniach.</span></div>
+        <div><span class="sg-label">tekst 17 px</span><span>Opis stanowiska i zwykły tekst w całej aplikacji.</span></div>
+        <div><span class="sg-label"><code>.small</code> 15 px</span><span class="small">Tekst pomocniczy, np. metadane oferty.</span></div>
+        <div><span class="sg-label"><code>.eyebrow</code> 13 px</span><span class="eyebrow">Nadtytuł</span></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="geometria" aria-labelledby="h-geometria">
+      <h2 class="h2" id="h-geometria">Geometria i odstępy</h2>
+      <p class="small">Promienie: pola i chip <code>--r-sm</code>, przyciski <code>--r-btn</code>, karty <code>--r</code>, karta wyróżniona <code>--r-lg</code>, pigułki <code>--r-pill</code>. Odstępy ze skali 4/8.</p>
+      <div class="sg-grid">
+        <div class="sg-cell"><div class="sg-rad" style="--rr: var(--r-sm)"></div><span class="sg-label"><code>--r-sm</code> 10 px</span></div>
+        <div class="sg-cell"><div class="sg-rad" style="--rr: var(--r-btn)"></div><span class="sg-label"><code>--r-btn</code> 12 px</span></div>
+        <div class="sg-cell"><div class="sg-rad" style="--rr: var(--r)"></div><span class="sg-label"><code>--r</code> 16 px</span></div>
+        <div class="sg-cell"><div class="sg-rad" style="--rr: var(--r-lg)"></div><span class="sg-label"><code>--r-lg</code> 20 px</span></div>
+        <div class="sg-cell"><div class="sg-rad" style="--rr: var(--r-pill)"></div><span class="sg-label"><code>--r-pill</code> 99 px</span></div>
+      </div>
+      <div class="sg-grid" style="margin-top: var(--s-5)">
+        <div class="sg-cell"><div class="sg-space" style="--w: var(--s-1)"></div><span class="sg-label"><code>--s-1</code> 4 px</span></div>
+        <div class="sg-cell"><div class="sg-space" style="--w: var(--s-2)"></div><span class="sg-label"><code>--s-2</code> 8 px</span></div>
+        <div class="sg-cell"><div class="sg-space" style="--w: var(--s-3)"></div><span class="sg-label"><code>--s-3</code> 12 px</span></div>
+        <div class="sg-cell"><div class="sg-space" style="--w: var(--s-4)"></div><span class="sg-label"><code>--s-4</code> 16 px</span></div>
+        <div class="sg-cell"><div class="sg-space" style="--w: var(--s-5)"></div><span class="sg-label"><code>--s-5</code> 24 px</span></div>
+        <div class="sg-cell"><div class="sg-space" style="--w: var(--s-6)"></div><span class="sg-label"><code>--s-6</code> 32 px</span></div>
+        <div class="sg-cell"><div class="sg-space" style="--w: var(--s-7)"></div><span class="sg-label"><code>--s-7</code> 48 px</span></div>
+        <div class="sg-cell"><div class="sg-space" style="--w: var(--s-8)"></div><span class="sg-label"><code>--s-8</code> 72 px</span></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="przyciski" aria-labelledby="h-przyciski">
+      <h2 class="h2" id="h-przyciski">Przyciski</h2>
+      <p class="small">Jedna główna akcja na widok. Wysokości 40 / 48 / 56 px. Nigdy dwa przyciski główne obok siebie.</p>
+      <div class="sg-stage">
+        <div class="sg-row">
+          <button class="btn btn-primary" type="button">Dodaj ogłoszenie</button>
+          <button class="btn btn-secondary" type="button">Zapisz ofertę</button>
+          <button class="btn btn-ghost" type="button">Zobacz ofertę</button>
+        </div>
+        <div class="sg-row" style="margin-top: var(--s-5)">
+          <button class="btn btn-primary btn-sm" type="button">Mały 40 px</button>
+          <button class="btn btn-primary" type="button">Domyślny 48 px</button>
+          <button class="btn btn-primary btn-lg" type="button">Duży 56 px</button>
+        </div>
+        <div class="sg-row" style="margin-top: var(--s-5)">
+          <button class="btn btn-primary" type="button" disabled>Wyłączony</button>
+          <button class="btn btn-secondary" type="button" disabled>Wyłączony</button>
+          <button class="btn btn-secondary" type="button" aria-pressed="true">Wybrany (aria-pressed)</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="karty" aria-labelledby="h-karty">
+      <h2 class="h2" id="h-karty">Karty</h2>
+      <p class="small">Dwie powierzchnie i jedna linia aktywna. Bez przezroczystości, bez poświaty.</p>
+      <div class="sg-grid">
+        <div class="card"><p class="h3">Karta</p><p class="small">.card — <code>--surface</code>, linia <code>--line</code></p></div>
+        <div class="card card-strong"><p class="h3">Karta wyróżniona</p><p class="small">.card-strong — <code>--surface-strong</code></p></div>
+        <div class="card card-strong card-accent"><p class="h3">Karta aktywna</p><p class="small">.card-accent — linia <code>--line-accent</code></p></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="fakty" aria-labelledby="h-fakty">
+      <h2 class="h2" id="h-fakty">Tagi, widełki, wynik</h2>
+      <p class="small">Tag i widełki to fakty (żółta linia), nie akcje. Wynik to turkusowy chip z poświatą.</p>
+      <div class="sg-stage">
+        <div class="sg-row">
+          <span class="tag">Przykład · firma fikcyjna</span>
+          <span class="tag tag-muted">Build</span>
+          <span class="salary-wrap"><span class="salary">22–28 tys. zł</span><span class="salary-note">netto (B2B) / mies.</span></span>
+          <span class="salary">Nie podano wynagrodzenia</span>
+        </div>
+        <div class="sg-row" style="margin-top: var(--s-5)">
+          <p class="score score-sm" aria-label="Match Score 79">79</p>
+          <p class="score" aria-label="Match Score 82 na 100"><span>82</span><small>/100</small></p>
+          <p class="score score-lg" aria-label="Match Score 82 na 100"><span>82</span><small>/100</small></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="pola" aria-labelledby="h-pola">
+      <h2 class="h2" id="h-pola">Pola formularza</h2>
+      <p class="small">Etykieta nad polem, błąd pod polem z ikoną i tekstem (nigdy sam kolor).</p>
+      <div class="sg-grid">
+        <div class="field"><label for="f1">Stanowisko</label><input id="f1" type="text" placeholder="np. Inżynier/ka LLM"><span class="field-hint">Wpisz nazwę roli.</span></div>
+        <div class="field"><label for="f2">E-mail firmowy</label><input id="f2" type="email" value="jan@firma" aria-invalid="true" aria-describedby="f2e"><span class="field-error" id="f2e">Podaj pełny adres e-mail.</span></div>
+        <div class="field"><label for="f3">Tryb pracy</label><select id="f3"><option>Zdalnie</option><option>Hybrydowo</option><option>Stacjonarnie</option></select></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="komunikat" aria-labelledby="h-komunikat">
+      <h2 class="h2" id="h-komunikat">Komunikat</h2>
+      <p class="small">Ciemna karta z linią aktywną. Nie ma gradientu przycisku, żeby nie wyglądała jak CTA.</p>
+      <div class="sg-stage"><p class="toast" role="status">Jeszcze niepodłączone – to prototyp strony</p></div>
+    </section>
+
+    <section class="sg-section" id="aplikacja" aria-labelledby="h-aplikacja">
+      <h2 class="h2" id="h-aplikacja">Komponenty aplikacji</h2>
+      <p class="small">Wiersz oferty z kolumną faktów, segment, panel faktów, miernik, status, tabela, pole wyboru i wybór roli. Żywe przykłady: <a href="app/oferty.html">lista ofert</a>, <a href="app/oferta.html?id=7">szczegóły oferty</a>, <a href="app/logowanie.html">wybór roli</a>, <a href="app/pracodawca.html">panel pracodawcy</a>.</p>
+      <div class="sg-type">
+        <div><span class="sg-label"><code>.segment</code></span>
+          <div class="segment" role="group" aria-label="Przykład segmentu"><button type="button" aria-pressed="true">Wszystkie <span class="count">8</span></button><button type="button" aria-pressed="false">Build <span class="count">2</span></button><button type="button" aria-pressed="false">Apply <span class="count">4</span></button></div></div>
+        <div><span class="sg-label"><code>.job-row</code> + <code>.job-facts</code></span>
+          <ul><li class="job-row">
+            <div class="job-main">
+              <p class="job-company">Hefajstos Narzędzia</p>
+              <h3 class="h3 job-title"><a href="app/oferta.html?id=7">Senior Product Designer / AI Experience Lead — narzędzia dla zespołów operacyjnych</a></h3>
+              <ul class="meta"><li><span class="tag tag-muted">Apply</span></li><li>Wrocław</li><li>Zdalnie</li><li>Senior</li></ul>
+              <ul class="skills" aria-label="Umiejętności"><li>UX</li><li>Prototypowanie z AI</li><li>Research</li><li>Design system</li><li>+2</li></ul>
+            </div>
+            <div class="job-facts">
+              <span class="small">1 dzień temu</span>
+              <span class="salary">Nie podano wynagrodzenia</span>
+              <span class="job-score"><span class="score score-sm">77</span><span class="small">Match Score · przykład</span></span>
+              <a class="btn btn-ghost" href="app/oferta.html?id=7">Zobacz ofertę</a>
+            </div>
+          </li></ul></div>
+        <div><span class="sg-label"><code>.facts</code> + <code>.facts-list</code> + <code>.meter</code></span>
+          <div class="card card-strong facts">
+            <div><p class="eyebrow">Wynagrodzenie</p><span class="salary-wrap"><span class="salary">22–28 tys. zł</span><span class="salary-note">netto (B2B) / mies.</span></span></div>
+            <dl class="facts-list"><div><dt>Tryb pracy</dt><dd>Hybrydowo</dd></div><div><dt>Lokalizacja</dt><dd>Warszawa</dd></div></dl>
+            <div><span class="meter" style="--v:80" aria-hidden="true"></span><p class="small">Ogłoszenie widoczne jeszcze 24 z 30 dni</p></div>
+          </div></div>
+        <div><span class="sg-label"><code>.callout</code>, <code>.num-list</code>, <code>.check-list</code>, <code>.perks</code><br>najważniejsza fraza w <code>strong</code></span>
+          <div class="sg-cell">
+            <section class="card card-strong callout"><h3 class="eyebrow">Praca z AI w tej roli</h3><p class="callout-text">Buduje <strong>asystenta do obsługi zwrotów</strong>, testuje i poprawia <strong>odpowiedzi modelu</strong>.</p></section>
+            <div class="card prose">
+              <ol class="num-list"><li><span>Budowa <strong>zestawów testowych</strong> i ocena jakości odpowiedzi modelu.</span></li><li><span>Współpraca przy opisie <strong>przypadków brzegowych</strong>.</span></li></ol>
+              <ul class="check-list"><li><span><strong>Python</strong> i praca z danymi tekstowymi.</span></li></ul>
+              <ul class="perks"><li><span><strong>Jasny zakres odpowiedzialności</strong> i czas na naukę.</span></li><li><span><strong>Budżet na narzędzia</strong> ustalany z zespołem.</span></li><li><span><strong>Rozmowa o warunkach</strong> przed decyzją.</span></li></ul>
+            </div>
+          </div></div>
+        <div><span class="sg-label"><code>.modal</code> (w aplikacji wyśrodkowany <code>dialog</code>), <code>.icon-btn</code>, <code>.choices</code>, <code>.actions</code></span>
+          <div class="sg-stage"><div class="modal">
+            <div class="modal-head"><div><p class="eyebrow">Wersja demonstracyjna</p><p class="h2">Wybierz rolę</p></div><button class="icon-btn" type="button" aria-label="Zamknij (przykład)">×</button></div>
+            <div class="modal-body">
+              <div class="choices"><label class="card choice"><input type="radio" name="sg-rola2"><span class="h3 choice-mark">Kandydat/ka</span><span class="small">Przeglądasz oferty.</span></label><label class="card choice"><input type="radio" name="sg-rola2" checked><span class="h3 choice-mark">Pracodawca</span><span class="small">Widzisz panel firmy.</span></label></div>
+              <div class="actions"><button class="btn btn-primary" type="button">Wejdź do wersji demo</button><button class="btn btn-secondary" type="button">Wyczyść zapisany wybór</button></div>
+            </div>
+          </div></div></div>
+        <div><span class="sg-label"><code>.stat-num-lg</code>, <code>.job-apps</code></span>
+          <div class="sg-row"><div class="card card-strong card-accent"><p class="stat-num stat-num-lg">23</p><p class="h3">aktywne aplikacje</p></div><span class="job-apps"><span class="stat-num">9</span><span class="small">aplikacji</span></span></div></div>
+        <div><span class="sg-label"><code>.status</code></span>
+          <div class="sg-row"><span class="status status-new">Nowa</span><span class="status status-active">Aktywne</span><span class="status">Zakończone</span></div></div>
+        <div><span class="sg-label"><code>.table</code></span>
+          <div class="table-wrap"><table class="table">
+            <thead><tr><th scope="col">Kandydat</th><th scope="col">Ogłoszenie</th><th scope="col">Match Score</th><th scope="col">Status</th></tr></thead>
+            <tbody><tr><th scope="row">Anna K.</th><td>Inżynier/ka LLM</td><td><span class="score score-sm">91</span></td><td><span class="status status-new">Nowa</span></td></tr>
+            <tr><th scope="row">Ewa M.</th><td>Inżynier/ka LLM</td><td><span class="score score-sm">64</span></td><td><span class="status">Odrzucona</span></td></tr></tbody>
+          </table></div></div>
+        <div><span class="sg-label"><code>.check</code> w grupie, <code>.choice</code>, <code>.stat-num</code></span>
+          <div class="sg-row"><fieldset class="filters-group"><legend class="eyebrow">Tryb pracy</legend><label class="check"><input type="checkbox" checked> Zdalnie</label><label class="check"><input type="checkbox"> Hybrydowo</label></fieldset>
+            <label class="card choice"><input type="radio" name="sg-rola" checked><span class="h3 choice-mark">Pracodawca</span><span class="small">Wybrana rola</span></label>
+            <div class="card"><p class="stat-num">81</p><p class="small">średni Match Score</p></div></div></div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
